@@ -44,7 +44,7 @@ void QuickSort(double list[], int left, int right)
 
 int main()
 {
-    const int N = 25000;
+    const int N = 100000;
     double randoms[N];
 
     clock_t t;

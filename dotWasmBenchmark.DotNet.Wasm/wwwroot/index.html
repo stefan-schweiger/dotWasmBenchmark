@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BakkBenchmark.DotNet.Wasm</title>
+    <base href="/" />
+    <script type="text/javascript">
+        let origLog;
+
+        if (typeof console !== "undefined") {
+            // tslint:disable-next-line:prefer-conditional-expression
+            if (typeof console.log !== "undefined") {
+                origLog = console.log;
+            }
+        }
+
+        console.log = (message) => {
+            origLog(message);
+			const out = document.querySelector("#consoleOut");
+
+			if (out != null) {
+				out.value += message + "\n";
+			}
+        };
+    </script>
+</head>
+<body>
+    Console:
+	<br>
+	<textarea rows="30" cols="80" id="consoleOut" style="font-family: 'Courier New', Courier, monospace"></textarea>
+
+    <script type="blazor-boot"></script>
+</body>
+</html>

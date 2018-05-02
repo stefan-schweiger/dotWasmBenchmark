@@ -4,7 +4,7 @@
 
 The Benchmark is currently very simple and only does the following things:
 
-* Generate 100.000 random list elements (from 0.0 to 1.0)
+* Generate 100,000 random list elements (from 0.0 to 1.0)
 * Sort the list by their values
 * Get Q1, Median, Q3 and calculate average and standard deviation
 
@@ -22,10 +22,10 @@ The .NET Projects where build with `Release` configuration and the C Projects wi
 
 ## Results
 
-|           | C    | C.Wasm | DotNet.Console | DotNet.Wasm | JavaScript |
-|-----------|-----:|-------:|---------------:|------------:|-----------:|
-| Generate  | 1,21 |   1,00 |           1,00 |      127,00 |       7,50 |
-| Sort      | 9,05 |  12,00 |          26,00 |     7123,00 |      22,40 |
-| Calculate | 0,21 |   1,00 |           4,00 |      498,00 |       6,60 |
+|           | C      | C.Wasm   | DotNet.Console   | DotNet.Wasm   | JavaScript   |
+|-----------|-------:|---------:|-----------------:|--------------:|-------------:|
+| Generate  | 1.21ms |   1.00ms |           1.00ms |      127.00ms |       7.50ms |
+| Sort      | 9.05ms |  12.00ms |          26.00ms |     7123.00ms |      22.40ms |
+| Calculate | 0.21ms |   1.00ms |           4.00ms |      498.00ms |       6.60ms |
 
 ![Benchmark Chart](images/benchmark-20180502.PNG?raw=true "Benchmark Chart")

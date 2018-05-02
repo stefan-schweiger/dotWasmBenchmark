@@ -18,6 +18,8 @@ The Benchmark was implemented in the following languages/platforms:
 * C-wasm (emcc 1.37.36)
 * JavaScript (TypeScript 2.8.1)
 
+[mono-wasm with AOT](https://github.com/lrz/mono-wasm) was also attempted, but the project seems not to developed in the open and resulted in either compilation or JIT errors when running.
+
 The .NET Projects where build with `Release` configuration and the C Projects with `-O3` optimizations.
 
 ## Results

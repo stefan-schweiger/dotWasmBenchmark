@@ -5,14 +5,14 @@ namespace BakkBenchmark.DotNet
 {
     public class Sort
     {
-        public static void QuickSort(IList<double> list)
+        public static void QuickSort(double[] list)
         {
-            QuickSort(list, 0, list.Count);
+            QuickSort(list, 0, list.Length);
         }
 
-        private static void QuickSort(IList<double> list, int left, int right)
+        private static void QuickSort(double[] list, int left, int right)
         {
-            if (list == null || list.Count <= 1)
+            if (list == null || list.Length <= 1)
                 return;
 
             if (left < right)
@@ -25,7 +25,7 @@ namespace BakkBenchmark.DotNet
             }
         }
 
-        private static int Partition(IList<double> list, int left, int right)
+        private static int Partition(double[] list, int left, int right)
         {
             int start = left;
             double pivot = list[start];

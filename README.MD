@@ -13,7 +13,7 @@ The Benchmark is currently very simple and only does the following things:
 The Benchmark was implemented in the following languages/platforms:
 
 * .NET Core 2.1.300 (preview2-008533)
-* mono-wasm (commit a14f41c from Blazor 0.2.0)
+* mono-wasm (commit a14f41c from Blazor 0.3.0)
 * C (gcc 4.2.1)
 * C-wasm (emcc 1.37.36)
 * JavaScript (TypeScript 2.8.1)
@@ -24,10 +24,22 @@ The .NET Projects where build with `Release` configuration and the C Projects wi
 
 ## Results
 
+Chrome 65
+
 |           | C      | C.Wasm   | DotNet.Console   | DotNet.Wasm   | JavaScript   |
 |-----------|-------:|---------:|-----------------:|--------------:|-------------:|
 | Generate  | 1.21ms |   1.00ms |           1.00ms |      127.00ms |       7.50ms |
-| Sort      | 9.05ms |  12.00ms |          26.00ms |     7123.00ms |      22.40ms |
-| Calculate | 0.21ms |   1.00ms |           4.00ms |      498.00ms |       6.60ms |
+| Sort      | 9.05ms |  12.00ms |          26.00ms |      406.00ms |      22.40ms |
+| Calculate | 0.21ms |   1.00ms |           4.00ms |      474.00ms |       6.60ms |
 
-![Benchmark Chart](images/benchmark-20180502.PNG?raw=true "Benchmark Chart")
+![Benchmark Chart](images/benchmark-20180503-Chrome.PNG?raw=true "Benchmark Chart")
+
+Firefox 60
+
+|           | C      | C.Wasm   | DotNet.Console   | DotNet.Wasm   | JavaScript   |
+|-----------|-------:|---------:|-----------------:|--------------:|-------------:|
+| Generate  | 1.21ms |   1.00ms |           1.00ms |       84.00ms |       4.00ms |
+| Sort      | 9.05ms |  12.00ms |          26.00ms |      297.00ms |      16.00ms |
+| Calculate | 0.21ms |   1.00ms |           4.00ms |      321.00ms |       4.00ms |
+
+![Benchmark Chart](images/benchmark-20180503-Firefox.PNG?raw=true "Benchmark Chart")

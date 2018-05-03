@@ -6,15 +6,15 @@ namespace BakkBenchmark.DotNet
 {
     public static class Calc
     {
-        public static StatResult Calculate(IList<double> list)
+        public static StatResult Calculate(double[] list)
         {
-            var q1 = list[list.Count / 4];
-            var median = list[list.Count / 2];
-            var q3 = list[list.Count / 4 * 3];
+            var q1 = list[list.Length / 4];
+            var median = list[list.Length / 2];
+            var q3 = list[list.Length / 4 * 3];
 
             var avg = list.Average();
             var stDevSum = list.Sum(d => (d - avg) * (d - avg));
-            var stDev = Math.Sqrt(stDevSum / list.Count);
+            var stDev = Math.Sqrt(stDevSum / list.Length);
 
             return new StatResult() {
                 Q1 = q1,

@@ -30,10 +30,10 @@ Chrome 65
 
 |          | C      | C.Wasm | DotNet.Console | DotNet.Wasm | JavaScript | Bridge.Net | Mono Interpreter |
 |-----------|--------:|--------:|----------------:|-------------:|------------:|------------:|------------------:|
-| Generate  | 61.00ms  | 25.00ms  | 66.92ms          | 7016.50ms     | 213.40ms     | 282.00ms     | 1577.14ms          |
-| Sort      | 529.00ms | 847.00ms | 600.32ms         | 26806.00ms    | 898.50ms     | 1002.00ms    | 5510.68ms          |
-| Calculate | 10.68ms  | 13.00ms  | 15.31ms          | 1405.40ms     | 18.20ms      | 22.00ms      | 274.37ms           |
-|          | 600.68ms | 885.00ms | 682.55ms         | 35227.90ms    | 1130.10ms    | 1306.00ms    | 7362.19ms          |
+| Generate  | 61.00ms  | 25.00ms  | 66.92ms          | 7,016.50ms     | 213.40ms     | 282.00ms     | 1,577.14ms          |
+| Sort      | 529.00ms | 847.00ms | 600.32ms         | 26,806.00ms    | 898.50ms     | 1,002.00ms    | 5,510.68ms          |
+| Calculate | 10.68ms  | 13.00ms  | 15.31ms          | 1,405.40ms     | 18.20ms      | 22.00ms      | 274.37ms           |
+|          | 600.68ms | 885.00ms | 682.55ms         | 35,227.90ms    | 1,130.10ms    | 1,306.00ms    | 7,362.19ms          |
 
 ![Benchmark Chart](images/benchmark-20180503-5mil-Chrome.png "Benchmark Chart")
 
@@ -41,9 +41,9 @@ Firefox 60
 
 |          | C      | C.Wasm | DotNet.Console | DotNet.Wasm | JavaScript | Bridge.Net | Mono Interpreter |
 |-----------|--------:|--------:|----------------:|-------------:|------------:|------------:|------------------:|
-| Generate  | 61.00ms  | 57.00ms  | 66.92ms          | 4413.00ms     | 143.00ms     | 785.00ms     | 1577.14ms          |
-| Sort      | 529.00ms | 847.00ms | 600.32ms         | 19861.00ms    | 901.00ms     | 1057.00ms    | 5510.68ms          |
-| Calculate | 10.68ms  | 42.00ms  | 15.31ms          | 1001.00ms     | 14.00ms      | 24.00ms      | 274.37ms           |
-|          | 600.68ms | 946.00ms | 682.55ms         | 25275.00ms    | 1058.00ms    | 1866.00ms    | 7362.19ms          |
+| Generate  | 61.00ms  | 57.00ms  | 66.92ms          | 4,413.00ms     | 143.00ms     | 785.00ms     | 1,577.14ms          |
+| Sort      | 529.00ms | 847.00ms | 600.32ms         | 19,861.00ms    | 901.00ms     | 1,057.00ms    | 5,510.68ms          |
+| Calculate | 10.68ms  | 42.00ms  | 15.31ms          | 1,001.00ms     | 14.00ms      | 24.00ms      | 274.37ms           |
+|          | 600.68ms | 946.00ms | 682.55ms         | 25,275.00ms    | 1,058.00ms    | 1,866.00ms    | 7,362.19ms          |
 
 ![Benchmark Chart](images/benchmark-20180503-5mil-Firefox.png "Benchmark Chart")

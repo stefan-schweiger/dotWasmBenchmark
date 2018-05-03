@@ -34,6 +34,8 @@ Chrome 65
 
 ![Benchmark Chart](images/benchmark-20180503-Chrome.PNG?raw=true "Benchmark Chart")
 
+Firefox 60
+
 |           | C      | C.Wasm   | DotNet.Console   | DotNet.Wasm   | JavaScript   |
 |-----------|-------:|---------:|-----------------:|--------------:|-------------:|
 | Generate  | 1.21ms |   1.00ms |           1.00ms |       84.00ms |       4.00ms |

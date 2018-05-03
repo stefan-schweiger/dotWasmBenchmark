@@ -32,7 +32,7 @@ Chrome 65
 | Sort      | 9.05ms |  12.00ms |          26.00ms |      406.00ms |      22.40ms |
 | Calculate | 0.21ms |   1.00ms |           4.00ms |      474.00ms |       6.60ms |
 
-![Benchmark Chart](images/benchmark-20180503-Chrome.PNG?raw=true "Benchmark Chart")
+![Benchmark Chart](images/benchmark-20180503-Chrome.png "Benchmark Chart")
 
 Firefox 60
 
@@ -42,4 +42,4 @@ Firefox 60
 | Sort      | 9.05ms |  12.00ms |          26.00ms |      297.00ms |      16.00ms |
 | Calculate | 0.21ms |   1.00ms |           4.00ms |      321.00ms |       4.00ms |
 
-![Benchmark Chart](images/benchmark-20180503-Firefox.PNG?raw=true "Benchmark Chart")
+![Benchmark Chart](images/benchmark-20180503-Firefox.png "Benchmark Chart")

@@ -1,2 +1,9 @@
 dotWasmBenchmark.Mono.Wasm/
 dotWasmBenchmark.Mono.Wasm.Aot/
+*/.vs/*
+*/obj/*
+*/bin/*
+*/dist/*
+*/bin/*
+*/packages/*
+*.suo

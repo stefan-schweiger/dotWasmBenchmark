@@ -6,11 +6,16 @@ importScripts(
     './Stopwatch.js'
 );
 
-self.addEventListener('message', function(e) {
+function benchmark(n, length) {
     const sw = new StopWatch();
-
-    const n = 100000;
+    
     const list = [];
+    const res = {
+        generate: 0,
+        sort: 0,
+        calculate: 0,
+        calcResult: null
+    };
 
     sw.start();
     //const seq = DNAGenerator.generate(100000, 500);
@@ -19,9 +24,7 @@ self.addEventListener('message', function(e) {
     }
     sw.stop();
 
-    self.postMessage(
-        JSON.stringify({ message: 'generated', duration: sw.elapsed })
-    );
+    res.generate = sw.elapsed;
 
     //sw.start();
     //const list = Sequencer.sequenceMatch(seq);
@@ -35,16 +38,25 @@ self.addEventListener('message', function(e) {
     Sort.quickSort(list);
     sw.stop();
 
-    self.postMessage(
-        JSON.stringify({ message: 'sorted', duration: sw.elapsed })
-    );
+    res.sort = sw.elapsed;
 
     sw.start();
-    const res = Calc.calculate(list);
+    const calcRes = Calc.calculate(list);
     sw.stop();
 
+    res.calculate = sw.elapsed;
+    res.calcResult = calcRes;
+
+    return res;
+}
+
+self.addEventListener('message', function(e) {
+    const n = 5000000;
+
+    const res = benchmark(n);
+
     self.postMessage(
-        JSON.stringify({ message: 'calculated', duration: sw.elapsed, result: res })
+        JSON.stringify(res)
     );
 
     self.close();

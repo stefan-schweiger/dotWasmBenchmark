@@ -33,7 +33,7 @@ namespace BakkBenchmark.DotNet
             }
         }
 
-        public static IList<string> Generate(int n, int length)
+        public static string[] Generate(int n, int length)
         {
             var res = new string[n];
 

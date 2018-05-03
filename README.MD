@@ -4,7 +4,7 @@
 
 The Benchmark is currently very simple and only does the following things:
 
-* Generate 100,000 random list elements (from 0.0 to 1.0)
+* Generate 5,000,000 random list elements (from 0.0 to 1.0)
 * Sort the list by their values
 * Get Q1, Median, Q3 and calculate average and standard deviation
 
@@ -17,6 +17,8 @@ The Benchmark was implemented in the following languages/platforms:
 * C (gcc 4.2.1)
 * C-wasm (emcc 1.37.36)
 * JavaScript (TypeScript 2.8.1)
+* Bride.NET (17.0.0)
+* mono --interpreter (5.10.1)
 
 [mono-wasm with AOT](https://github.com/lrz/mono-wasm) was also attempted, but the project seems not to developed in the open and resulted in either compilation or JIT errors when running.
 
@@ -26,20 +28,22 @@ The .NET Projects where build with `Release` configuration and the C Projects wi
 
 Chrome 65
 
-|           | C      | C.Wasm   | DotNet.Console   | DotNet.Wasm   | JavaScript   |
-|-----------|-------:|---------:|-----------------:|--------------:|-------------:|
-| Generate  | 1.21ms |   1.00ms |           1.00ms |      127.00ms |       7.50ms |
-| Sort      | 9.05ms |  12.00ms |          26.00ms |      406.00ms |      22.40ms |
-| Calculate | 0.21ms |   1.00ms |           4.00ms |      474.00ms |       6.60ms |
+| a         | C      | C.Wasm | DotNet.Console | DotNet.Wasm | JavaScript | Bridge.Net | Mono Interpreter |
+|-----------|--------:|--------:|----------------:|-------------:|------------:|------------:|------------------:|
+| Generate  | 61.00ms  | 25.00ms  | 66.92ms          | 7016.50ms     | 213.40ms     | 282.00ms     | 1577.14ms          |
+| Sort      | 529.00ms | 847.00ms | 600.32ms         | 26806.00ms    | 898.50ms     | 1002.00ms    | 5510.68ms          |
+| Calculate | 10.68ms  | 13.00ms  | 15.31ms          | 1405.40ms     | 18.20ms      | 22.00ms      | 274.37ms           |
+| a         | 600.68ms | 885.00ms | 682.55ms         | 35227.90ms    | 1130.10ms    | 1306.00ms    | 7362.19ms          |
 
-![Benchmark Chart](images/benchmark-20180503-Chrome.png "Benchmark Chart")
+![Benchmark Chart](images/benchmark-20180503-5mil-Chrome.png "Benchmark Chart")
 
 Firefox 60
 
-|           | C      | C.Wasm   | DotNet.Console   | DotNet.Wasm   | JavaScript   |
-|-----------|-------:|---------:|-----------------:|--------------:|-------------:|
-| Generate  | 1.21ms |   1.00ms |           1.00ms |       84.00ms |       4.00ms |
-| Sort      | 9.05ms |  12.00ms |          26.00ms |      297.00ms |      16.00ms |
-| Calculate | 0.21ms |   1.00ms |           4.00ms |      321.00ms |       4.00ms |
+| a         | C      | C.Wasm | DotNet.Console | DotNet.Wasm | JavaScript | Bridge.Net | Mono Interpreter |
+|-----------|--------:|--------:|----------------:|-------------:|------------:|------------:|------------------:|
+| Generate  | 61.00ms  | 57.00ms  | 66.92ms          | 4413.00ms     | 143.00ms     | 785.00ms     | 1577.14ms          |
+| Sort      | 529.00ms | 847.00ms | 600.32ms         | 19861.00ms    | 901.00ms     | 1057.00ms    | 5510.68ms          |
+| Calculate | 10.68ms  | 42.00ms  | 15.31ms          | 1001.00ms     | 14.00ms      | 24.00ms      | 274.37ms           |
+| a         | 600.68ms | 946.00ms | 682.55ms         | 25275.00ms    | 1058.00ms    | 1866.00ms    | 7362.19ms          |
 
-![Benchmark Chart](images/benchmark-20180503-Firefox.png "Benchmark Chart")
+![Benchmark Chart](images/benchmark-20180503-5mil-Firefox.png "Benchmark Chart")

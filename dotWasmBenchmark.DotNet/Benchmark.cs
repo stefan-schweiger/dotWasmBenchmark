@@ -6,9 +6,9 @@ namespace BakkBenchmark.DotNet
 {
     public static class Benchmark
     {
-        public static void Start(int n = 1000, int length = 500)
+        public static BenchmarkResult Start(int n = 1000, int length = 500)
         {
-            Console.WriteLine("Start");
+            var result = new BenchmarkResult();
 
             var stopWatch = new Stopwatch();
 
@@ -23,7 +23,9 @@ namespace BakkBenchmark.DotNet
             }
             stopWatch.Stop();
 
-            Console.WriteLine($"Generate:  {stopWatch.ElapsedMilliseconds}ms");
+            result.Generate = stopWatch.Elapsed.TotalMilliseconds;
+
+            
 
             // deactivate with DNAGenerator
             /*stopWatch.Restart();
@@ -35,22 +37,39 @@ namespace BakkBenchmark.DotNet
             stopWatch.Restart();
             Sort.QuickSort(list);
             stopWatch.Stop();
-        
-            Console.WriteLine($"Sort:      {stopWatch.ElapsedMilliseconds}ms");
+
+            result.Sort = stopWatch.Elapsed.TotalMilliseconds;
 
             stopWatch.Restart();
             var res = Calc.Calculate(list);
             stopWatch.Stop();
 
-            Console.WriteLine($"Calculate: {stopWatch.ElapsedMilliseconds}ms");
+            result.Calculate = stopWatch.Elapsed.TotalMilliseconds;
+            result.CalculationResult = res;
+
+            return result;
+        }
+
+        public static void StartAndPrint(int n = 1000, int length = 500) {
+            var result = Start(n, length);
+            Console.WriteLine($"Generate:  {result.Generate:N2}ms");
+            Console.WriteLine($"Sort:      {result.Sort:N2}ms");
+            Console.WriteLine($"Calculate: {result.Calculate:N2}ms");
 
             Console.WriteLine("----------------------------------------------");
 
-            Console.WriteLine($"Q1     {res.Q1}");
-            Console.WriteLine($"Median {res.Median}");
-            Console.WriteLine($"Q3     {res.Q3}");
-            Console.WriteLine($"Avg.   {res.Avg}");
-            Console.WriteLine($"StDev  {res.StDev}");
+            Console.WriteLine($"Q1     {result.CalculationResult.Q1:N3}");
+            Console.WriteLine($"Median {result.CalculationResult.Median:N3}");
+            Console.WriteLine($"Q3     {result.CalculationResult.Q3:N3}");
+            Console.WriteLine($"Avg.   {result.CalculationResult.Avg:N3}");
+            Console.WriteLine($"StDev  {result.CalculationResult.StDev:N3}");
         }
+    }
+
+    public struct BenchmarkResult {
+        public double Generate { get; set; }
+        public double Sort { get; set; }
+        public double Calculate { get; set; }
+        public StatResult CalculationResult { get; set; }
     }
 }

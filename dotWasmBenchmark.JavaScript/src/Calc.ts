@@ -1,8 +1,19 @@
 class Calc {
     public static calculate(list: number[]): any {
-        const sum = list.reduce((prev, curr) => prev + curr, 0);
+        let sum = 0.0;
+
+        for (let i = 0; i < list.length; i++) {
+            sum += list[i];
+        }
+
         const avg = sum / list.length;
-        const stDevSum = list.reduce((prev, curr) => (curr - avg) * (curr - avg) + prev, 0);
+
+        let stDevSum = 0.0;
+
+        for (let i = 0; i < list.length; i++) {
+            stDevSum += (list[i] - avg) * (list[i] - avg);
+        }
+
         const stDev = Math.sqrt(stDevSum / list.length);
 
         return {

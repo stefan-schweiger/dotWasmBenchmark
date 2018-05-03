@@ -12,8 +12,18 @@ namespace BakkBenchmark.DotNet
             var median = list[list.Length / 2];
             var q3 = list[list.Length / 4 * 3];
 
-            var avg = list.Average();
-            var stDevSum = list.Sum(d => (d - avg) * (d - avg));
+            var sum = 0.0;
+            for (int i = 0; i < list.Length; i++) {
+                sum += list[i];
+            }
+
+            var avg = sum / list.Length;
+
+            var stDevSum = 0.0;
+            for (int i = 0; i < list.Length; i++) {
+                stDevSum += (list[i] - avg) * (list[i] - avg);
+            }
+
             var stDev = Math.Sqrt(stDevSum / list.Length);
 
             return new StatResult() {

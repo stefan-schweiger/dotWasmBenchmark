@@ -1,3 +1,7 @@
+# THIS PROJECT IS DEPRECATED
+
+A slighly more advanced Benchmark with newer runtimes can be found here: https://github.com/stefan-schweiger/bakkBenchmark
+
 # Current state of mono-wasm/Blazor performance
 
 ## Benchmark Information
